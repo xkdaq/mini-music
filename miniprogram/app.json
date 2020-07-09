@@ -7,34 +7,32 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#5180FD",
+    "navigationBarTitleText": "测试",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#AFB3BD",
-    "selectedColor":"#5180FD",
-    "list": [
+    "selectedColor": "#5180FD",
+    "list": [{
+        "pagePath": "pages/playlist/playlist",
+        "text": "测试1",
+        "iconPath": "images/box_ic_main_nochoose.png",
+        "selectedIconPath": "images/box_ic_main_choose.png"
+      },
       {
-      "pagePath": "pages/blog/blog",
-      "text": "首页",
-      "iconPath": "images/box_ic_main_nochoose.png",
-      "selectedIconPath": "images/box_ic_main_choose.png"
-    },
-    {
-      "pagePath": "pages/playlist/playlist",
-      "text": "发现",
-      "iconPath": "images/box_ic_status_nochoose.png",
-      "selectedIconPath": "images/box_ic_status_choose.png"
-    },
-    {
-      "pagePath": "pages/profile/profile",
-      "text": "首页",
-      "iconPath": "images/box_ic_user_nochoose.png",
-      "selectedIconPath": "images/box_ic_user_choose.png"
-    }
-    
-  ]
+        "pagePath": "pages/blog/blog",
+        "text": "测试2",
+        "iconPath": "images/box_ic_status_nochoose.png",
+        "selectedIconPath": "images/box_ic_status_choose.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "测试3",
+        "iconPath": "images/box_ic_user_nochoose.png",
+        "selectedIconPath": "images/box_ic_user_choose.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

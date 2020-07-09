@@ -1,2 +1,11 @@
-<!--miniprogram/pages/playlist/playlist.wxml-->
-<text>miniprogram/pages/playlist/playlist.wxml</text>
+<swiper indicator-dots="true">
+  <swiper-item wx:for="{{swiperList}}" wx:key="url">
+    <image src="{{item.url}}" mode="widthFix" class="img"></image>
+  </swiper-item>
+</swiper>
+
+<view class="playlist-container">
+   <block wx:for="{{playList}}" wx:key="_id">
+      <x-playlist playlist="{{item}}"></x-playlist>
+   </block>
+</view>
