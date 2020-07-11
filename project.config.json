@@ -92,6 +92,14 @@
 					"id": -1,
 					"name": "pages/demo/demo",
 					"pathName": "pages/demo/demo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/musiclist/musiclist",
+					"pathName": "pages/musiclist/musiclist",
+					"query": "playlistId= 2852787790",
 					"scene": null
 				}
 			]
