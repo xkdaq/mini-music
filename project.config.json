@@ -85,6 +85,13 @@
 					"id": -1,
 					"name": "pages/funcloud/funcloud",
 					"pathName": "pages/funcloud/funcloud",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/demo/demo",
+					"pathName": "pages/demo/demo",
 					"scene": null
 				}
 			]
