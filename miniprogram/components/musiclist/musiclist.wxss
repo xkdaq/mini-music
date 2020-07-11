@@ -1,6 +1,6 @@
 .musiclist-container {
   display: flex;
-  padding: 16rpx 16rpx 20rpx 0rpx;
+  padding: 16rpx 20rpx 16rpx 0rpx;
   align-items: center;
 }
 
