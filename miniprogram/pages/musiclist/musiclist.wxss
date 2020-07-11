@@ -15,8 +15,8 @@
 }
 
 .detail-img {
-  width: 280rpx;
-  height: 280rpx;
+  width: 260rpx;
+  height: 260rpx;
   margin-right: 24rpx;
   border-radius: 6rpx;
 }

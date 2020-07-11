@@ -1,6 +1,6 @@
 .musiclist-container {
   display: flex;
-  padding: 16rpx 20rpx;
+  padding: 16rpx 16rpx 20rpx 0rpx;
   align-items: center;
 }
 
@@ -8,6 +8,9 @@
   color: #888;
   font-size: 32rpx;
   width: 52rpx;
+  text-align: center;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
 }
 
 .musiclist-info {
