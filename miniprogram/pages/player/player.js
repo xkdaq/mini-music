@@ -3,6 +3,9 @@ let musiclist = []
 let nowPlayingIndex = 0
 // 获取全局唯一的背景音频管理器  单例
 const backgroundAudioManager = wx.getBackgroundAudioManager()
+const app = getApp()
+
+
 Page({
 
   /**
@@ -32,6 +35,9 @@ Page({
     wx.setNavigationBarTitle({
       title: music.name
     })
+
+    //设置全局的musicId
+    app.setPlayMusicId(musicId)
 
     this.setData({
       picUrl: music.al.picUrl,

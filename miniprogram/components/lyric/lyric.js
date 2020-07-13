@@ -24,7 +24,7 @@ Component({
       } else {
         this._parseLyric(lrc)
       }
-      // console.log(lrc)
+       console.log(lrc)
     },
   },
 
