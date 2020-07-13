@@ -5,7 +5,6 @@ let nowPlayingIndex = 0
 const backgroundAudioManager = wx.getBackgroundAudioManager()
 const app = getApp()
 
-
 Page({
 
   /**
@@ -16,6 +15,7 @@ Page({
     isPlaying: false,
     isLyricShow: false,
     lyric: '',
+    isSame: false
   },
 
   /**
@@ -29,7 +29,18 @@ Page({
   },
 
   _loadMusicDetail(musicId) {
-    backgroundAudioManager.stop()
+    if (musicId == app.getPalyMusicId()) {
+      this.setData({
+        isSame: true
+      })
+    } else {
+      this.setData({
+        isSame: false
+      })
+    }
+    if (!this.data.isSame) {
+      backgroundAudioManager.stop()
+    }
     let music = musiclist[nowPlayingIndex]
     console.log(music);
     wx.setNavigationBarTitle({
@@ -55,12 +66,19 @@ Page({
       }
     }).then(res => {
       console.log(res);
-
-      backgroundAudioManager.src = res.result.data[0].url
-      backgroundAudioManager.title = music.name
-      backgroundAudioManager.coverImgUrl = music.al.picUrl
-      backgroundAudioManager.singer = music.ar[0].name
-      backgroundAudioManager.epname = music.al.name
+      if (res.result.data[0].url == null) {
+        wx.showToast({
+          title: '无权限播放',
+        })
+        return
+      }
+      if (!this.data.isSame) {
+        backgroundAudioManager.src = res.result.data[0].url
+        backgroundAudioManager.title = music.name
+        backgroundAudioManager.coverImgUrl = music.al.picUrl
+        backgroundAudioManager.singer = music.ar[0].name
+        backgroundAudioManager.epname = music.al.name
+      }
 
       this.setData({
         isPlaying: true

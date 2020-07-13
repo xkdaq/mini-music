@@ -2,16 +2,16 @@
 let movableAreaWidth = 0
 let movableViewWidth = 0
 const backgroundAudioManager = wx.getBackgroundAudioManager()
-let currentSec = -1 
-let duration = 0 
-let isMoving = false 
+let currentSec = -1
+let duration = 0
+let isMoving = false
 
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    isSame: Boolean
   },
 
   /**
@@ -69,7 +69,7 @@ Component({
       query.exec(rect => {
         movableAreaWidth = rect[0].width
         movableViewWidth = rect[1].width
-        console.log(movableAreaWidth,movableViewWidth);
+        console.log(movableAreaWidth, movableViewWidth);
       })
     },
 
@@ -147,7 +147,7 @@ Component({
         ['showTime.totalTime']: `${durationFmt.min}:${durationFmt.sec}`
       })
     },
-   
+
     _dateFormat(sec) {
       const min = Math.floor(sec / 60)
       sec = Math.floor(sec % 60)

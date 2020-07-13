@@ -14,6 +14,14 @@ Component({
     playingId: -1
   },
 
+  pageLifetimes: {
+    show() {
+      this.setData({
+        playingId: parseInt(app.getPlayMusicId())
+      })
+    }
+  },
+
   /**
    * 组件的方法列表
    */
