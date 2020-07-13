@@ -33,6 +33,14 @@ exports.main = async (event, context) => {
 
   })
 
+  app.router('musicUrl', async (ctx, next) => {
+    ctx.body = await rp(BSE_URL + '/song/url?id=' + parseInt(event.musicId))
+      .then(res => {
+        return JSON.parse(res)
+      })
+
+  })
+
   return app.serve()
 
 }
