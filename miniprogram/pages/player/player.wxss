@@ -69,11 +69,13 @@
   color: #fefefe;
 }
 
-.icon-shangyishoushangyige, .icon-xiayigexiayishou {
+.icon-shangyishoushangyige,
+.icon-xiayigexiayishou {
   font-size: 60rpx;
 }
 
-.icon-bofang1, .icon-zanting1 {
+.icon-bofang1,
+.icon-zanting1 {
   font-size: 100rpx;
   margin: 0 50rpx;
 }
@@ -97,4 +99,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.progress-bar {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24%;
 }

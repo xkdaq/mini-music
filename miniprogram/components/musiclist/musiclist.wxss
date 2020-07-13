@@ -41,5 +41,5 @@
 
 .playing view,
 .playing text {
-  color: #d43c33;
+  color: #5180FD;
 }
