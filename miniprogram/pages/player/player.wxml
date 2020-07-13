@@ -2,12 +2,14 @@
 <view class="player-mask"></view>
 
 
-<view>
+<view class="player-info">
 	<!-- 封面 -->
 	<view class="player-disc {{isPlaying?'play': ''}}" bind:tap="onChangeLyricShow" hidden="{{isLyricShow}}">
 		<image class="player-img rotation {{isPlaying?'':'rotation-paused'}}" src="{{picUrl}}"></image>
 	</view>
 
+	<!-- 歌词 -->
+	<x-lyric class="lyric" isLyricShow="{{!isLyricShow}}" bind:tap="onChangeLyricShow" lyric="{{lyric}}" />
 
 	<!-- 进度条 -->
 	<view class="progress-bar">

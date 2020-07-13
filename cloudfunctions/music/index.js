@@ -41,6 +41,15 @@ exports.main = async (event, context) => {
 
   })
 
+
+  app.router('lyric', async (ctx, next) => {
+    ctx.body = await rp(BSE_URL + '/lyric/?id=' + parseInt(event.musicId))
+      .then(res => {
+        return res
+      })
+
+  })
+
   return app.serve()
 
 }

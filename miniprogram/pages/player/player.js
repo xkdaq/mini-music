@@ -11,6 +11,8 @@ Page({
   data: {
     picUrl: '',
     isPlaying: false,
+    isLyricShow: false,
+    lyric: '',
   },
 
   /**
@@ -59,6 +61,25 @@ Page({
       })
       wx.hideLoading()
 
+
+      wx.cloud.callFunction({
+        name: 'music',
+        data: {
+          musicId,
+          $url: 'lyric',
+        }
+      }).then((res) => {
+        console.log(res)
+        let lyric = '暂无歌词'
+        const lrc = JSON.parse(res.result).lrc
+        if (lrc) {
+          lyric = lrc.lyric
+        }
+        this.setData({
+          lyric
+        })
+      })
+
     })
   },
 
@@ -93,6 +114,32 @@ Page({
     this._loadMusicDetail(musiclist[nowPlayingIndex].id)
   },
 
+  onChangeLyricShow() {
+    this.setData({
+      isLyricShow: !this.data.isLyricShow,
+    })
+  },
+
+  onChangeLyricShow() {
+    this.setData({
+      isLyricShow: !this.data.isLyricShow
+    })
+  },
+
+  timeUpdate(event) {
+    this.selectComponent('.lyric').update(event.detail.currentTime)
+  },
+
+  onPlay() {
+    this.setData({
+      isPlaying: true,
+    })
+  },
+  onPause() {
+    this.setData({
+      isPlaying: false,
+    })
+  },
 
 
 
