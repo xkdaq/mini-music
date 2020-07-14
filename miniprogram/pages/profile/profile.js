@@ -14,12 +14,12 @@ Page({
   onLoad: function (options) {
 
 
-    
-
-
-
-
   },
 
 
+  onAbout() {
+    wx.navigateTo({
+      url: '../about/about',
+    })
+  }
 })

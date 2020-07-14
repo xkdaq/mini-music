@@ -1,0 +1,21 @@
+/* miniprogram/pages/about/about.wxss */
+
+.about-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-logo {
+  width: 160rpx;
+  margin-top: 100rpx;
+  height: 160rpx;
+  text-align: center;
+  border-radius: 100rpx;
+}
+
+.about-name {
+  text-align: center;
+  margin-top: 40rpx;
+}

@@ -1,0 +1,4 @@
+<view class="about-container">
+	<image src='../../images/logo.jpg' class="about-logo"></image>
+	<text class="about-name">v1.0.0</text>
+</view>

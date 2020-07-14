@@ -21,7 +21,7 @@
     </navigator>
   </view>
   <view class="nav-item">
-    <view class="content" bind:tap="onTapQrCode">
+    <view class="content" bind:tap="onAbout">
       <i class="iconfont icon-guanyu"></i>
       <text class="text">关于我们</text>
       <i class="iconfont icon-xiangyou"></i>
