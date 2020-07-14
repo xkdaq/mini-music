@@ -2,3 +2,12 @@
 	<image src='../../images/logo.jpg' class="about-logo"></image>
 	<text class="about-name">v1.0.0</text>
 </view>
+
+
+<view class="nav">
+	<view class="nav-item">
+		<view class="content" hover-class="none" bind:tap="onVersionUpdate">
+			<text class="text">检查更新</text>
+		</view>
+	</view>
+</view>

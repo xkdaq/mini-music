@@ -19,3 +19,34 @@
   text-align: center;
   margin-top: 40rpx;
 }
+
+
+.nav {
+  overflow: hidden;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 50rpx;
+  margin-top: 50rpx;
+  box-sizing: border-box;
+  display: block;
+}
+
+.nav-item {
+  padding-right: 90rpx;
+  position: relative;
+  display: flex;
+  padding: 0 30rpx;
+  min-height: 100rpx;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  font-size: 30rpx;
+  line-height: 1.6em;
+  flex: 1;
+}

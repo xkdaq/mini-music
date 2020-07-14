@@ -126,9 +126,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 10,
 					"name": "pages/about/about",
 					"pathName": "pages/about/about",
+					"query": "",
 					"scene": null
 				}
 			]
