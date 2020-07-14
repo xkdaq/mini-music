@@ -10,20 +10,29 @@ Page({
 
   onVersionUpdate() {
     console.log("版本更新");
-    
+    wx.showLoading({
+      title: '正在检查更新',
+    })
     const updateManager = wx.getUpdateManager()
-    updateManager.onCheckForUpdate((res)=>{
-      if (res.hasUpdate){
-        updateManager.onUpdateReady(()=>{
+    updateManager.onCheckForUpdate((res) => {
+      if (res.hasUpdate) {
+        updateManager.onUpdateReady(() => {
+          wx.hideLoading()
           wx.showModal({
             title: '更新提示',
             content: '新版本已经准备好，是否重启应用',
-            success(res){
-              if(res.confirm){
+            success(res) {
+              if (res.confirm) {
                 updateManager.applyUpdate()
               }
             }
           })
+        })
+      }else{
+        wx.hideLoading()
+        wx.showModal({
+          title: '更新提示',
+          content: '已是最新版本,暂无更新',
         })
       }
     })
