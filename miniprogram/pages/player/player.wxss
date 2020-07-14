@@ -65,17 +65,32 @@
   align-items: center;
 }
 
-.control .iconfont {
+.control {
   color: #fefefe;
+}
+
+.icon-aixin1{
+  position: absolute;
+  font-size: 60rpx;
+  left: -40%;
+}
+
+.icon-aixin2 {
+  color: tomato;
+  position: absolute;
+  font-size: 60rpx;
+  left: -40%;
 }
 
 .icon-shangyishoushangyige,
 .icon-xiayigexiayishou {
+  color: #fefefe;
   font-size: 60rpx;
 }
 
 .icon-bofang1,
 .icon-zanting1 {
+  color: #fefefe;
   font-size: 100rpx;
   margin: 0 50rpx;
 }

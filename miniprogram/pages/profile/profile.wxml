@@ -14,7 +14,7 @@
     </navigator>
   </view>
   <view class="nav-item">
-    <navigator class="content" hover-class="none" >
+    <navigator class="content" hover-class="none" url="/pages/playlove/playlove">
       <i class="iconfont icon-shoucang"></i>
       <text class="text">我的收藏</text>
       <i class="iconfont icon-xiangyou"></i>

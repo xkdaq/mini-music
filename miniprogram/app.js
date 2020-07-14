@@ -21,6 +21,10 @@ App({
     }
 
     this.getOpenId()
+
+    if (wx.getStorageSync("islove") == '') {
+      wx.setStorageSync("islove", [])
+    }
   },
 
   setPlayMusicId(musicId) {

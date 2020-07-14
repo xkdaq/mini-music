@@ -15,7 +15,8 @@ Page({
     isPlaying: false,
     isLyricShow: false,
     lyric: '',
-    isSame: false
+    isSame: false,
+    isLove: false,
   },
 
   /**
@@ -80,7 +81,9 @@ Page({
         backgroundAudioManager.epname = music.al.name
 
         //保存播放历史
-        this.saveHistory() 
+        this.saveHistory()
+        //检查是否收藏
+        this.checkIsLove()
       }
 
       this.setData({
@@ -141,6 +144,29 @@ Page({
     this._loadMusicDetail(musiclist[nowPlayingIndex].id)
   },
 
+  onLove() {
+    const music = musiclist[nowPlayingIndex]
+    const love = wx.getStorageSync("islove")
+    if (!this.data.isLove) {
+      love.unshift(music)
+    } else {
+      love.forEach((item, index) => {
+        if (item.id == music.id) {
+          love.splice(index, 1)
+        }
+      })
+    }
+
+    wx.setStorage({
+      data: love,
+      key: 'islove',
+    })
+
+    this.setData({
+      isLove: !this.data.isLove
+    })
+  },
+
   onChangeLyricShow() {
     this.setData({
       isLyricShow: !this.data.isLyricShow,
@@ -167,6 +193,25 @@ Page({
       isPlaying: false,
     })
   },
+
+  /***
+   * 检查是否是收藏歌曲
+   */
+  checkIsLove() {
+    const music = musiclist[nowPlayingIndex]
+    const love = wx.getStorageSync("islove")
+    let islove = false
+    for (let i = 0, len = love.length; i < len; i++) {
+      if (love[i].id == music.id) {
+        islove = true
+        break
+      }
+    }
+    this.setData({
+      isLove: islove
+    })
+  },
+
 
   /**
    * 保存播放历史

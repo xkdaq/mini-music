@@ -18,6 +18,7 @@
 
 	<!-- 控制 -->
 	<view class="control">
+		<text class="iconfont {{isLove?'icon-aixin2':'icon-aixin1'}}" bind:tap="onLove"></text>
 		<text class="iconfont icon-shangyishoushangyige" bind:tap="onPrev"></text>
 		<text class="iconfont {{isPlaying?'icon-zanting1':'icon-bofang1'}}" bind:tap="togglePlaying"></text>
 		<text class="iconfont icon-xiayigexiayishou" bind:tap="onNext"></text>
