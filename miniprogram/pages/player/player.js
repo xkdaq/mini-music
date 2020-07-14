@@ -29,7 +29,7 @@ Page({
   },
 
   _loadMusicDetail(musicId) {
-    if (musicId == app.getPalyMusicId()) {
+    if (musicId == app.getPlayMusicId()) {
       this.setData({
         isSame: true
       })
@@ -78,6 +78,9 @@ Page({
         backgroundAudioManager.coverImgUrl = music.al.picUrl
         backgroundAudioManager.singer = music.ar[0].name
         backgroundAudioManager.epname = music.al.name
+
+        //保存播放历史
+        this.saveHistory() 
       }
 
       this.setData({
@@ -165,6 +168,34 @@ Page({
     })
   },
 
+  /**
+   * 保存播放历史
+   */
+  saveHistory() {
+    //当前播放的歌曲
+    const music = musiclist[nowPlayingIndex]
+    //获取用户openid
+    const openid = app.globalData.openid
+    //获取历史播放 判断当前歌曲是否在历史列表数据里
+    const history = wx.getStorageSync(openid)
+    let isHava = false
+    for (let i = 0, len = history.length; i < len; i++) {
+      if (history[i].id == music.id) {
+        isHava = true
+        break
+      }
+    }
+
+    //遍历完之后如果没有就往里面插入数据
+    if (!isHava) {
+      history.unshift(music)
+      wx.setStorage({
+        data: history,
+        key: openid,
+      })
+    }
+
+  }
 
 
 })

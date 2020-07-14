@@ -23,7 +23,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wxe660d62d3d9d3a00",
@@ -32,6 +32,7 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -108,6 +109,13 @@
 					"name": "pages/player/player",
 					"pathName": "pages/player/player",
 					"query": "musicId=29759733&index=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/profile",
+					"pathName": "pages/profile/profile",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -6,27 +6,30 @@
     "pages/funcloud/funcloud",
     "pages/demo/demo",
     "pages/musiclist/musiclist",
-    "pages/player/player"
+    "pages/player/player",
+    "pages/playhistory/playhistory"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#5180FD",
-    "navigationBarTitleText": "测试",
+    "navigationBarTitleText": "音乐",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
+    "borderStyle": "white",
     "color": "#AFB3BD",
     "selectedColor": "#5180FD",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/playlist/playlist",
-        "text": "测试1",
+        "text": "首页",
         "iconPath": "images/box_ic_main_nochoose.png",
         "selectedIconPath": "images/box_ic_main_choose.png"
       },
       {
         "pagePath": "pages/profile/profile",
-        "text": "测试2",
+        "text": "我的",
         "iconPath": "images/box_ic_user_nochoose.png",
         "selectedIconPath": "images/box_ic_user_choose.png"
       }

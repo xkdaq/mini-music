@@ -1,32 +1,12 @@
-// miniprogram/pages/demo/demo.js
+// miniprogram/pages/playhistory/playhistory.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
-
-  getMusicInfo() {
-    wx.cloud.callFunction({
-      name: 'tcbRouter',
-      data: {
-        $url: 'music'
-      },
-    }).then((res) => {
-      console.log(res)
-    })
-  },
-  getMovieInfo() {
-    wx.cloud.callFunction({
-      name: 'tcbRouter',
-      data: {
-        $url: 'movie'
-      }
-    }).then((res) => {
-      console.log(res)
-    })
+    musiclist: []
   },
 
   /**
@@ -34,11 +14,13 @@ Page({
    */
   onLoad: function (options) {
 
-    //2.只有用户授权之后才能获取到信息
-    wx.getUserInfo({
-      success: res => {
-          console.log(res);   
-      }
+    //获取用户openid
+    const openid = app.globalData.openid
+    //获取历史播放 判断当前歌曲是否在历史列表数据里
+    const history = wx.getStorageSync(openid)
+
+    this.setData({
+      musiclist: history
     })
 
   },
