@@ -47,6 +47,15 @@ exports.main = async (event, context) => {
 
   const newData = []
 
+  let addData = {};
+  addData.id = '5122337426'
+  addData.name = '儿歌'
+  addData.copywriter ='测试测试测试测试测试测试'
+  addData.picUrl = 'https://p1.music.126.net/Zq307ZBPncIExqQvXeiwPA==/109951163877486027.jpg'
+  addData.playCount = 2
+
+  list.data.push(addData)
+
   for (let i = 0, len1 = playList.length; i < len1; i++) {
     let flag = true
     for (let j = 0, len2 = list.data.length; j < len2; j++) {
@@ -72,6 +81,10 @@ exports.main = async (event, context) => {
       console.log(error);
     })
   }
+
+
+
+
 
   console.log(playList.length);
 
